@@ -1,0 +1,51 @@
+---
+import Layout from "../layouts/layout.astro";
+import Main from "../layouts/mainlayout.astro";
+import HeaderMenu from "../components/headermenu.astro";
+import Sidebar from "../components/sidebar.astro";
+import Hero from "../components/hero.astro";
+import Preloader from "../components/preloader.astro";
+import Header from "../components/header.astro";
+import Breadcrumb from "../components/aboutpage/breadcrumb.astro";
+
+import BlogPost from "../components/blogpage/blogpost.astro";
+---
+
+<Layout title="J Bengtsson">
+  <Sidebar title="" />
+  <HeaderMenu title="" />
+
+  <div
+    class="h-full bg-[#F5F5F5] bg-cover bg-no-repeat bg-center dark:bg-[url('../images/home2-hero-bg-dark.png')] dark:bg-dark_primary_bg"
+  >
+    <Header />
+    <!-- Main wrapper start -->
+    <Main>
+      <div
+        class="ltr:xxl:pl-[440px] ltr:xl:pl-[300px] ltr:lg:pl-[230px] rtl:xxl:pr-[440px] rtl:xl:pr-[300px] rtl:lg:pr-[230px] ltr:xxl:pr-[100px] ltr:xl:pr-[50px] ltr:lg:pr-[30px] ltr:only-md:pr-[20px] rtl:xxl:pl-[100px] rtl:xl:pl-[30px] md:px-[15px]"
+      >
+        <div
+          class="ltr:xxl:pl-[100px] ltr:xl:pl-[50px] ltr:lg:pl-[30px] ltr:only-md:pl-5 rtl:xxl:pr-[100px] rtl:xl:pr-[50px] rtl:lg:pr-[30px] rtl:only-md:pr-5"
+        >
+          <Breadcrumb title="Blog" accent="Blog" />
+
+          <!-- Blog section start -->
+          <section class="pt-[50px] lg:pb-[100px] pb-[70px]">
+            <div
+              class="grid grid-cols-1 only-md:grid-cols-2 lg:grid-cols-3 gap-[30px]"
+            >
+              <BlogPost />
+              <BlogPost />
+              <BlogPost />
+              <BlogPost />
+              <BlogPost />
+              <BlogPost />
+            </div>
+          </section>
+          <!-- Blog section end -->
+        </div>
+      </div>
+    </Main>
+    <!-- Main wrapper end -->
+  </div>
+</Layout>

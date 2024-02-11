@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/layout.astro";
+import Main from "../layouts/mainlayout.astro";
+import Sidenbar from "../components/sidebar.astro";
+import Header from "../components/header.astro";
+import HeaderMenu from "../components/headermenu.astro";
+import Preloader from "../components/preloader.astro";
+
+import Breadcrumb from "../components/aboutpage/breadcrumb.astro";
+import AboutMe from "../components/aboutpage/aboutme.astro";
+import Resume from "../components/aboutpage/resume.astro";
+import Skills from "../components/aboutpage/skills.astro";
+import Brands from "../components/aboutpage/brands.astro";
+---
+
+<Layout title="J Bengtsson">
+  <Sidenbar title="" />
+  <HeaderMenu title="" />
+  <div
+    class="h-full bg-[#F5F5F5] bg-cover bg-no-repeat bg-center dark:bg-[url('../images/home2-hero-bg-dark.png')] dark:bg-dark_primary_bg"
+  >
+    <Header />
+    <Main>
+      <div
+        class="ltr:xxl:pl-[440px] ltr:xl:pl-[300px] ltr:lg:pl-[230px] rtl:xxl:pr-[440px] rtl:xl:pr-[300px] rtl:lg:pr-[230px] ltr:xxl:pr-[100px] ltr:xl:pr-[50px] ltr:lg:pr-[30px] ltr:only-md:pr-[20px] rtl:xxl:pl-[100px] rtl:xl:pl-[30px] md:px-[15px]"
+      >
+        <div
+          class="ltr:xxl:pl-[100px] ltr:xl:pl-[50px] ltr:lg:pl-[30px] ltr:only-md:pl-5 rtl:xxl:pr-[100px] rtl:xl:pr-[50px] rtl:lg:pr-[30px] rtl:only-md:pr-5"
+        >
+          <Breadcrumb title="About Me" accent="Me" />
+          <AboutMe />
+          <Resume />
+          <Skills />
+          <Brands />
+        </div>
+      </div>
+    </Main>
+  </div>
+</Layout>
