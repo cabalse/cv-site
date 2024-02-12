@@ -1,3 +1,21 @@
+---
+import HelloMessage from "./hellomessage";
+import Axios from "axios";
+
+const response = await Axios.get(
+  "https://cdn.builder.io/api/v3/content/personal-information?apiKey=7ed7a6172c544c82a6117e0dccdd37a4"
+);
+
+const name =
+  response.data.results[0].data.firstName +
+  " " +
+  response.data.results[0].data.lastName;
+const image = response.data.results[0].data.image;
+const title = response.data.results[0].data.title;
+const blurb = response.data.results[0].data.blurb;
+const cvLink = response.data.results[0].data.cvLink;
+---
+
 <section
   class="h-full lg:min-h-screen only-md:h-[83vh] overflow-hidden lg:flex only-md:flex items-center"
   id="home"
@@ -27,25 +45,21 @@
       <div>
         <!-- profile content start -->
         <div class="grow sm:text-center">
-          <span
-            class="text-accent1 xxl:text-[24px] xl:text-[22px] font-semibold italic pb-[5px]"
-            >HELLO I'M</span
-          >
+          <HelloMessage client:load />
           <h2
             class="xxl:text-[60px] lg:text-[50px] only-md:text-[40px] sm:text-[28px] font-bold font-heebo text-heading dark:text-white"
           >
-            Maras Faron!
+            {name}!
           </h2>
           <h3
             class="font-heebo font-normal text-primary dark:text-white xxl:text-[32px] lg:text-[28px]"
           >
-            UX/UI Designer and Developer
+            {title}
           </h3>
           <p
             class="xxl:text-[20px] lg:text-[18px] md:text-[16px] text-paragraph dark:text-slate-200 lg:mt-[18px] md:mt-[15px]"
           >
-            There are many variations of sum availabled <br />
-            in alley of type and scrambled it some.
+            {blurb}
           </p>
           <div class="mt-7">
             <button
@@ -61,9 +75,9 @@
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                   class="feather feather-download"
                 >
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
